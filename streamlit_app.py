@@ -52,5 +52,5 @@ if st.button("Deteksi") and user_input.strip():
         pred = torch.argmax(probs).item()
         confidence = probs[0][pred].item()
 
-    label = "Cyberbullying 😡" if pred == 0 else "Normal 😊"
+    label = "Cyberbullying 😡" if pred == 0 else "Bukan Cyberbullying 😊"
     st.success(f"**Hasil Deteksi:** {label} (Probabilitas: {confidence:.2f})")
