@@ -55,7 +55,7 @@ if st.button("**Deteksi**") and user_input.strip():
     label = "Cyberbullying 😡" if pred == 0 else "Bukan Cyberbullying 😊"
     st.divider()
     st.write("**Hasil Deteksi:**")
-    if pred == 0:
+    if pred == 1:
         st.success(f"### {label} \n(**Probabilitas: {confidence:.2f}**)")
     else:
         st.warning(f"### {label} \n(**Probabilitas: {confidence:.2f}**)")
