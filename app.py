@@ -2,8 +2,14 @@
 from flask import Flask, request, jsonify
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
+import gdown
 
 app = Flask(__name__)
+
+url = "https://drive.google.com/file/d/1Rgqp7lmibftxEe9tML9lcv6KpmAHPBe2/view?usp=sharing"
+output = "cyberbullying_model/model.safetensors"
+
+gdown.download(url, output, quiet=False)
 
 model = AutoModelForSequenceClassification.from_pretrained("cyberbullying_model")
 tokenizer = AutoTokenizer.from_pretrained("cyberbullying_tokenizer")
