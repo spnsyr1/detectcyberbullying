@@ -41,10 +41,10 @@ def load_model():
 tokenizer, model = load_model()
 
 # ====== 3. Input dari pengguna ======
-user_input = st.text_area("Masukkan komentar:")
+user_input = st.text_area("**Masukkan komentar:**")
 
 # ====== 4. Prediksi ======
-if st.button("Deteksi") and user_input.strip():
+if st.button("**Deteksi**") and user_input.strip():
     inputs = tokenizer(user_input, return_tensors="pt", truncation=True, padding=True)
     with torch.no_grad():
         logits = model(**inputs).logits
@@ -53,4 +53,5 @@ if st.button("Deteksi") and user_input.strip():
         confidence = probs[0][pred].item()
 
     label = "Cyberbullying 😡" if pred == 0 else "Bukan Cyberbullying 😊"
-    st.success(f"**Hasil Deteksi:** {label} (Probabilitas: {confidence:.2f})")
+    st.write("**Hasil Deteksi:**")
+    st.success(f"###{label} \n(Probabilitas: {confidence:.2f})")
