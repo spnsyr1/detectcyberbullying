@@ -19,6 +19,7 @@ import gdown
 import os
 
 st.title("Deteksi Komentar Cyberbullying")
+st.divider()
 
 # ====== 1. Download model jika belum ada ======
 model_path = "cyberbullying_model/model.safetensors"
