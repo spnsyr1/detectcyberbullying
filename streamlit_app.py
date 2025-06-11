@@ -53,5 +53,5 @@ if st.button("**Deteksi**") and user_input.strip():
         confidence = probs[0][pred].item()
 
     label = "Cyberbullying 😡" if pred == 0 else "Bukan Cyberbullying 😊"
-    st.write("**Hasil Deteksi:**")
+    st.divider("**Hasil Deteksi:**")
     st.success(f"### {label} \n(**Probabilitas: {confidence:.2f}**)")
