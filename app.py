@@ -1,4 +1,3 @@
-# app.py (Flask backend)
 from flask import Flask, request, jsonify
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
