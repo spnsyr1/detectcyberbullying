@@ -18,7 +18,7 @@ if not os.path.exists(model_path):
 
 @st.cache_resource(show_spinner="Memuat model...")
 def load_model():
-    model = AutoModelForSequenceClassification.from_pretrained(model_dir)
+    model = AutoModelForSequenceClassification.from_pretrained(model_dir, use_safetensors=True))
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
     return tokenizer, model
 
