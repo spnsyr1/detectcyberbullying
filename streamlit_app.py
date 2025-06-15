@@ -18,8 +18,8 @@ if not os.path.exists(model_path):
 
 @st.cache_resource(show_spinner="Memuat model...")
 def load_model():
-    model = AutoModelForSequenceClassification.from_pretrained(model_dir)
-    tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
+    model = AutoModelForSequenceClassification.from_pretrained(indobenchmark/indobert-base-p1)
+    tokenizer = AutoTokenizer.from_pretrained(indobenchmark/indobert-base-p1)
     return tokenizer, model
 
 tokenizer, model = load_model()
