@@ -13,7 +13,7 @@ model_dir = "cyberbullying_model"
 if not os.path.exists(model_path):
     st.info("Mengunduh model...")
     os.makedirs(model_dir, exist_ok=True)
-    url = "https://drive.google.com/file/d/1Z6V28h6nKI0WSBA-hbEx4QnPsk4ig4r-/view?usp=sharing"
+    url = "https://drive.google.com/file/d/1Z6V28h6nKI0WSBA-hbEx4QnPsk4ig4r"
     gdown.download(url, model_path, quiet=False)
 
 @st.cache_resource(show_spinner="Memuat model...")
