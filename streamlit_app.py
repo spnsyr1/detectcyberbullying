@@ -13,12 +13,12 @@ model_dir = "cyberbullying_model"
 if not os.path.exists(model_path):
     st.info("Mengunduh model...")
     os.makedirs(model_dir, exist_ok=True)
-    url = "https://drive.google.com/uc?id=1YZfnUOeb3mIvH8_AoMwdzTvp4l4wBWV2"
+    url = "https://drive.google.com/uc?id=1Rgqp7lmibftxEe9tML9lcv6KpmAHPBe2"
     gdown.download(url, model_path, quiet=False)
 
 @st.cache_resource(show_spinner="Memuat model...")
 def load_model():
-    model = AutoModelForSequenceClassification.from_pretrained(model_dir, use_safetensors=True)
+    model = AutoModelForSequenceClassification.from_pretrained(model_dir)
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
     return tokenizer, model
 
